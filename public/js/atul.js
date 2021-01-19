@@ -10,7 +10,19 @@ const weatherForm=document.querySelector("form")
         msg1.textContent="Loading......"
     msg2.textContent=''
         
-        fetch('http://localhost:3000/weather?address='+location).then((response)=>{
+    //     fetch('http://localhost:3000/weather?address='+location).then((response)=>{
+    // response.json().then((data)=>{
+    //     if(data.error){
+    //         msg1.textContent=data.error
+    //         msg2.textContent=''
+    //     }else{
+    //         msg1.textContent=data.address;
+    //        msg2.textContent=data.forecastData;
+    //     }
+    // })
+        
+    // })
+    fetch('/weather?address='+location).then((response)=>{
     response.json().then((data)=>{
         if(data.error){
             msg1.textContent=data.error
